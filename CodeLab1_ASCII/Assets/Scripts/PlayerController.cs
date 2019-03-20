@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
     private bool grounded = false;
     public Transform groundCheck;
     public float groundRadius = 1f;
-    public LayerMask whatisGround;
+    public LayerMask whatIsGround;
     
     // controls
     public KeyCode jump;
@@ -27,13 +27,17 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        grounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, whatisGround);
+        grounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, whatIsGround);
 
         // movement
         float moveDirection = Input.GetAxis("Horizontal"); // checks to see if player is going left or right
         gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(moveDirection*maxSpeed, gameObject.GetComponent<Rigidbody2D>().velocity.y);
-        
+
         if (grounded && Input.GetKeyDown(jump))
+        {
+            Debug.Log("JUMPING WOO");
             gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, jumpForce));
+        }
+            
     }
 }
