@@ -34,10 +34,7 @@ public class PlayerController : MonoBehaviour
         gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(moveDirection*maxSpeed, gameObject.GetComponent<Rigidbody2D>().velocity.y);
 
         if (grounded && Input.GetKeyDown(jump))
-        {
-            Debug.Log("JUMPING WOO");
             gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, jumpForce));
-        }
             
     }
 }

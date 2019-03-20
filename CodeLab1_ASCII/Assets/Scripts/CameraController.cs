@@ -22,14 +22,10 @@ public class CameraController : MonoBehaviour
         playerPosition = new Vector3(player.transform.position.x, player.transform.position.y, transform.position.z);
 
         if (player.transform.localScale.y > 0f)
-        {
             playerPosition = new Vector3(playerPosition.x + offsetX, playerPosition.y + offsetY, playerPosition.z);
-        }
             
         else
-        {
             playerPosition = new Vector3(playerPosition.x - offsetX, playerPosition.y + offsetY, playerPosition.z);
-        }
 
         transform.position = Vector3.Lerp(transform.position, playerPosition, offsetSmoothing * Time.deltaTime);
 

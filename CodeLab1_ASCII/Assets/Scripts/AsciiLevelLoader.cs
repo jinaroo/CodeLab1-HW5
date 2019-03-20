@@ -47,7 +47,6 @@ public class AsciiLevelLoader : MonoBehaviour
 
                 if (tile != null)
                     tile.transform.localPosition = new Vector2(startingX + (x * cellWidth), startingY - (y * cellWidth)); // NEW
-                    //tile.transform.position = new Vector2(x - line.Length/2f, inputLines.Length/2f - y);
             }
         }
     }
